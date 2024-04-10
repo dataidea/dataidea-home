@@ -38,7 +38,6 @@ const displayLearningMaterials = async () => {
   );
 
   const course_materials = await getLearningMaterials();
-  console.log(course_materials);
   course_materials.forEach((course_material) => {
     console.log(course_material);
     course_materials_container.innerHTML += `
