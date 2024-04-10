@@ -1,4 +1,4 @@
-const dataidea_url = "https://backend.dataidea.org";
+const dataidea_url = "https://api.dataidea.org";
 
 // Function to fetch and insert navbar and footer content
 const fetchHeaderAndFooter = () => {
