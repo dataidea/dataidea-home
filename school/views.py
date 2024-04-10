@@ -26,5 +26,5 @@ def searchCourses(request):
 # @login_required(login_url='accounts:signin')
 @api_view(['GET'])
 def downloadCourseMaterials(request, id):
-    Course = get_object_or_404(Course, pk=id)
-    return FileResponse(Course.materials)
+    course = get_object_or_404(Course, pk=id)
+    return FileResponse(course.materials)
