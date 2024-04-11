@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 class Author(models.Model):
     name = models.CharField(max_length=122, default='dataidea')
     email = models.CharField(max_length=122, default='datasideaofficial@gmail.com')
+    image = models.ImageField(upload_to='author_images/')
     profile = models.CharField(max_length=122, default='No profile provided')
 
     def __str__(self):
