@@ -1,4 +1,6 @@
-dataidea_url = "https://api.dataidea.org";
+let dataidea_api = "https://api.dataidea.org";
+const test_api = "http://127.0.0.1:8000/";
+dataidea_api = test_api;
 
 // Function to fetch and insert navbar and footer content
 const fetchHeaderAndFooter = () => {
@@ -22,9 +24,19 @@ fetchHeaderAndFooter();
 
 const getBlogs = async () => {
   try {
-    const blog_response = await fetch(dataidea_url + "/blogs");
+    const blog_response = await fetch(dataidea_api + "/blogs");
     const blogs = await blog_response.json();
     return blogs;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const getCategories = async () => {
+  try {
+    const category_response = await fetch(dataidea_api + "blogs/categories");
+    const categories = await category_response.json();
+    return categories;
   } catch (error) {
     console.log(error);
   }
@@ -40,12 +52,19 @@ const displayBlogs = async () => {
             <div
               class="blog-item position-relative overflow-hidden rounded mb-2"
             >
-              <img class="img-fluid" src="${dataidea_url}/media/blog_images/pexels-den-romi-mcrod-16988233.jpg" alt="" />
-              <a class="blog-overlay text-decoration-none" href="">
+              <img class="img-fluid" src="${dataidea_api}/${
+      blog.cover_image
+    }" alt="" />
+              <a class="blog-overlay text-decoration-none" href="blog_detail.html?id=${
+                blog.id
+              }">
                 <h5 class="text-white mb-3">
                   ${blog.title}
                 </h5>
-                <p class="text-primary m-0">${blog.date.slice(0, 10)} ${blog.date.slice(12, 19)}</p>
+                <p class="text-primary m-0">${blog.date.slice(
+                  0,
+                  10
+                )} ${blog.date.slice(12, 19)}</p>
               </a>
             </div>
           </div>
@@ -84,4 +103,27 @@ const displayBlogs = async () => {
           </div>`;
 };
 
+const displayCategories = async () => {
+  const category_container = document.querySelector(".categories-container");
+  const tags_container = document.querySelector(".tags-container");
+  const categories = await getCategories();
+  console.log(categories);
+  categories.forEach((category) => {
+    category_container.innerHTML += `
+    <li
+                  class="list-group-item d-flex justify-content-between align-items-center px-0"
+                >
+                  <a href="" class="text-decoration-none h6 m-0"
+                    >${category.name}</a
+                  >
+                  <span class="badge badge-primary badge-pill">98</span>
+                </li>
+    `;
+
+    tags_container.innerHTML += `
+    <a href="" class="btn btn-outline-primary m-1">${category.name}</a>`;
+  });
+};
+
 displayBlogs();
+displayCategories();
