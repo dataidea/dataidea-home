@@ -1,6 +1,6 @@
 let dataidea_api = "https://api.dataidea.org";
-const test_api = "http://127.0.0.1:8000/";
-dataidea_api = test_api;
+// const test_api = "http://127.0.0.1:8000/";
+// dataidea_api = test_api;
 
 // Function to fetch and insert navbar and footer content
 const fetchHeaderAndFooter = () => {
