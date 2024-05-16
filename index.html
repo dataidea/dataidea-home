@@ -15,7 +15,7 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8076040302380238"
      crossorigin="anonymous"></script>
 </head>
-<body class="font-[Poppins]">
+<body class="">
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <section class="bg-[#3a6e68]" id="home">
         <nav class="p-4 bg-[#3a6e68]">
@@ -27,10 +27,17 @@
                 <!-- Navbar links -->
                 <div class="hidden md:flex items-center space-x-4">
                     <a href="/" class="text-white hover:text-gray-300">Home</a>
-                    <a href="#about" class="text-white hover:text-gray-300">About</a>
                     <div class="relative">
-                        <button class="text-white hover:text-gray-300 focus:outline-none">Resources</button>
-                        <div class="absolute right-0 mt-2 w-48 bg-[#3a6e68] rounded-md shadow-lg z-10 hidden">
+                        <button class="text-white hover:text-gray-300 focus:outline-none mobile-dropdown-btn">About</button>
+                        <div class="absolute right-0 mt-2 w-48 bg-[#3a6e68] rounded-md shadow-lg z-10 hidden mobile-dropdown-menu">
+                            <a href="/#about" class="block px-4 py-2 text-white hover:bg-gray-700">About Us</a>
+                            <a href="privacy_policy.html" class="block px-4 py-2 text-white hover:bg-gray-700">Privacy Policy</a>
+                            <a href="terms_of_service.html" class="block px-4 py-2 text-white hover:bg-gray-700">Terms of Service</a>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <button class="text-white hover:text-gray-300 focus:outline-none mobile-dropdown-btn">Resources</button>
+                        <div class="absolute right-0 mt-2 w-48 bg-[#3a6e68] rounded-md shadow-lg z-10 hidden mobile-dropdown-menu">
                             <a href="https://courses.dataidea.org/" class="block px-4 py-2 text-white hover:bg-gray-700">Courses</a>
                             <a href="https://blog.dataidea.org/" class="block px-4 py-2 text-white hover:bg-gray-700">Blog</a>
                             <a href="https://chat.whatsapp.com/GuCZRyJICgO3Y7MPvDQKhi" class="block px-4 py-2 text-white hover:bg-gray-700">Forum</a>
@@ -51,19 +58,27 @@
             <div id="mobile-menu" class="md:hidden hidden">
                 <div class="px-2 pt-2 pb-3 space-y-1">
                     <a href="/" class="block px-3 py-2 text-white font-medium hover:text-gray-300">Home</a>
-                    <a href="#about" class="block px-3 py-2 text-white font-medium hover:text-gray-300">About</a>
                     <div class="relative">
-                        <button id="mobile-dropdown-btn" class="block w-full text-left px-3 py-2 text-white font-medium hover:text-gray-300 focus:outline-none">Resources</button>
-                        <div id="mobile-dropdown-menu" class="mt-1 w-full bg-[#3a6e68] rounded-md shadow-lg hidden">
+                        <button class="block w-full text-left px-3 py-2 text-white font-medium hover:text-gray-300 focus:outline-none mobile-dropdown-btn">Resources</button>
+                        <div class="mt-1 w-full bg-[#3a6e68] rounded-md shadow-lg hidden mobile-dropdown-menu">
                             <a href="https://courses.dataidea.org" class="block px-4 py-2 text-white hover:bg-gray-700">Courses</a>
                             <a href="https://blog.dataidea.org" class="block px-4 py-2 text-white hover:bg-gray-700">Blog</a>
                             <a href="https://chat.whatsapp.com/GuCZRyJICgO3Y7MPvDQKhi" class="block px-4 py-2 text-white hover:bg-gray-700">Forum</a>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <button class="block w-full text-left px-3 py-2 text-white font-medium hover:text-gray-300 focus:outline-none mobile-dropdown-btn">About</button>
+                        <div class="mt-1 w-full bg-[#3a6e68] rounded-md shadow-lg hidden mobile-dropdown-menu">
+                            <a href="#about" class="block px-4 py-2 text-white hover:bg-gray-700">About Us</a>
+                            <a href="privacy_policy.html" class="block px-4 py-2 text-white hover:bg-gray-700">Privacy Policy</a>
+                            <a href="terms_of_service.html" class="block px-4 py-2 text-white hover:bg-gray-700">Terms of Service</a>
                         </div>
                     </div>
                     <a href="#contact" class="block px-3 py-2 text-white font-medium hover:text-gray-300">Contact</a>
                 </div>
             </div>
         </nav>
+        
         
           
     </section>
@@ -569,39 +584,59 @@
     <script src="/js/mailer.js"></script>
     <script src="/js/buttons.js"></script>
 
-    <!-- nav -->
-    <script>
-       // Get the mobile menu button and the mobile menu itself
-const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
+<!-- nav -->
+<script>
+    // Get the dropdown buttons and menus
+    const dropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+    const dropdownMenus = document.querySelectorAll('.mobile-dropdown-menu');
 
-// Add a click event listener to the mobile menu button
-mobileMenuBtn.addEventListener('click', function() {
-    // Toggle the 'hidden' class on the mobile menu to show/hide it
-    mobileMenu.classList.toggle('hidden');
-});
+    // Function to toggle the visibility of the dropdown menu
+    function toggleDropdown(index) {
+        dropdownMenus.forEach((menu, i) => {
+            if (i === index) {
+                menu.classList.toggle('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+    }
 
-// Get the mobile dropdown button and the mobile dropdown menu
-const mobileDropdownBtn = document.getElementById('mobile-dropdown-btn');
-const mobileDropdownMenu = document.getElementById('mobile-dropdown-menu');
+    // Add click event listeners to dropdown buttons
+    dropdownBtns.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+            toggleDropdown(index);
+        });
+    });
 
-// Add a click event listener to the mobile dropdown button
-mobileDropdownBtn.addEventListener('click', function() {
-    // Toggle the 'hidden' class on the mobile dropdown menu to show/hide it
-    mobileDropdownMenu.classList.toggle('hidden');
-});
+    // Function to close dropdown menus when clicking outside
+    function closeDropdownsOutside() {
+        window.addEventListener('click', (event) => {
+            if (!event.target.matches('.mobile-dropdown-btn')) {
+                dropdownMenus.forEach((menu) => {
+                    menu.classList.add('hidden');
+                });
+            }
+        });
+    }
 
-// Get the desktop dropdown button and the desktop dropdown menu
-const dropdownBtn = document.querySelector('.relative > button');
-const dropdownMenu = document.querySelector('.relative > .absolute');
+    // Call the function to close dropdowns when clicking outside
+    closeDropdownsOutside();
 
-// Add a click event listener to the desktop dropdown button
-dropdownBtn.addEventListener('click', function() {
-    // Toggle the 'hidden' class on the desktop dropdown menu to show/hide it
-    dropdownMenu.classList.toggle('hidden');
-});
+    // Function to toggle the mobile menu
+    function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    }
 
-    </script>
+    // Add click event listener to the mobile menu button
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    mobileMenuBtn.addEventListener('click', () => {
+        toggleMobileMenu();
+    });
+</script>
+
+
+
     
 </body>
 </html>
