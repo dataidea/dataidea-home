@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="brand/dataidea-logo.png"
+      type="image/x-icon"
+    />
+    <!-- tailwindcss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/42e0e8b23e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles/output.css" />
+    <link rel="stylesheet" href="styles/custom.css" />
+    <title>DATAIDEA</title>
+
+    <!-- google ads -->
+    <!-- <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8076040302380238"
+      crossorigin="anonymous"
+    ></script> -->
+  </head>
+  <body class="">
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <section class="bg-[#3a6e68]" id="home">
+      <nav class="p-4 bg-[#3a6e68]">
+        <div class="container mx-auto flex justify-between items-center">
+          <!-- Logo -->
+          <div>
+            <a href="/" class="text-white text-xl font-bold">DATAIDEA</a>
+          </div>
+          <!-- Navbar links -->
+          <div class="hidden md:flex items-center space-x-4">
+            <a href="/" class="text-white hover:text-gray-300">Home</a>
+            <div class="relative">
+              <button
+                class="text-white hover:text-gray-300 focus:outline-none mobile-dropdown-btn"
+              >
+                About
+              </button>
+              <div
+                class="absolute right-0 mt-2 w-48 bg-white shadow-lg z-10 hidden mobile-dropdown-menu"
+              >
+                <a
+                  href="index.html#about"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >About Us</a
+                >
+                <a
+                  href="privacy_policy.html"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >Privacy Policy</a
+                >
+                <a
+                  href="terms_of_service.html"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >Terms of Service</a
+                >
+              </div>
+            </div>
+            <div class="relative">
+              <button
+                class="text-white hover:text-gray-300 focus:outline-none mobile-dropdown-btn"
+              >
+                Resources
+              </button>
+              <div
+                class="absolute right-0 mt-2 w-48 bg-white text-gray-90 shadow-lg z-10 hidden mobile-dropdown-menu"
+              >
+                <a
+                  href="https://courses.dataidea.org/"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >Courses</a
+                >
+                <a
+                  href="https://blog.dataidea.org/"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >Blog</a
+                >
+                <a
+                  href="https://chat.whatsapp.com/GuCZRyJICgO3Y7MPvDQKhi"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >Forum</a
+                >
+                <a
+                  href="https://french.dataidea.org/"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >French</a
+                >
+                <a
+                  href="https://football.dataidea.org/"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >Football</a
+                >
+                <a
+                  href="https://movies.dataidea.org/"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >Movies</a
+                >
+              </div>
+            </div>
+            <a href="#contact" class="text-white hover:text-gray-300"
+              >Contact</a
+            >
+          </div>
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button id="mobile-menu-btn" class="text-white focus:outline-none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a
+              href="/"
+              class="block px-3 py-2 text-white font-medium hover:text-gray-300"
+              >Home</a
+            >
+            <div class="relative">
+              <button
+                class="block w-full text-left px-3 py-2 text-white font-medium hover:text-gray-300 focus:outline-none mobile-dropdown-btn"
+              >
+                About
+              </button>
+              <div class="mt-1 bg-white shadow-lg hidden mobile-dropdown-menu">
+                <a
+                  href="index.html#about"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >About Us</a
+                >
+                <a
+                  href="privacy_policy.html"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >Privacy Policy</a
+                >
+                <a
+                  href="terms_of_service.html"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >Terms of Service</a
+                >
+              </div>
+            </div>
+            <div class="relative">
+              <button
+                class="block w-full text-left px-3 py-2 text-white font-medium hover:text-gray-300 focus:outline-none mobile-dropdown-btn"
+              >
+                Resources
+              </button>
+              <div
+                class="mt-1 w-full bg-white shadow-lg hidden mobile-dropdown-menu"
+              >
+                <a
+                  href="https://courses.dataidea.org"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >Courses</a
+                >
+                <a
+                  href="https://blog.dataidea.org"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >Blog</a
+                >
+                <a
+                  href="https://chat.whatsapp.com/GuCZRyJICgO3Y7MPvDQKhi"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >Forum</a
+                >
+                <a
+                  href="https://french.dataidea.org"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >French</a
+                >
+                <a
+                  href="https://football.dataidea.org"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >Football</a
+                >
+                <a
+                  href="https://movies.dataidea.org"
+                  class="block px-4 py-2 text-gray-900 hover:bg-[#3a6e68] hover:text-white"
+                  >Movies</a
+                >
+              </div>
+            </div>
+            <a
+              href="#contact"
+              class="block px-3 py-2 text-white font-medium hover:text-gray-300"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <section style="text-align: center; padding: 50px">
+      <h1>404 - Page Not Found</h1>
+      <p>Sorry, but the page you were looking for could not be found.</p>
+      <a href="/" style="text-decoration: underline"
+        >Click here to back to the homepage</a
+      >
+    </section>
+
+    <footer
+      class="text-gray-900 py-10 p-5 flex flex-col-reverse space-y-5 md:px-32"
+    >
+      <main class="flex flex-col space-y-3 pt-10">
+        <p>
+          <i class="fa-solid fa-location-dot"></i><span> Kampala, Uganda</span>
+        </p>
+        <h1 class="font-extrabold text-xl">DATAIDEA</h1>
+        <h1 class="font-extrabold text-3xl">Programming for Data Science</h1>
+        <div
+          class="flex flex-col w-2/3 space-y-3 md:flex-row md:space-x-3 md:space-y-0"
+        >
+          <a
+            href="index.html#about"
+            target="_blank"
+            class="btn bg-[#3a6e68] hover:bg-green-500 rounded p-3 text-white text-center font-medium"
+            >Learn More</a
+          >
+          <a
+            href="mailto: dataidea0@gmail.com"
+            class="btn bg-gray-500 hover:bg-blue-500 text-center rounded p-3 text-white font-medium"
+            >Send Email</a
+          >
+        </div>
+        <div
+          class="flex flex-row p-5 space-x-3 justify-center text-3xl text-center"
+        >
+          <a
+            href="https://www.linkedin.com/company/dataidea"
+            target="_blank"
+            class="flex flex-col"
+          >
+            <span class=""><i class="fa-brands fa-linkedin"></i></span>
+            <span class="text-center text-base">LinkedIn</span>
+          </a>
+          <a
+            href="https://twitter.com/datas_idea"
+            target="_blank"
+            class="flex flex-col"
+          >
+            <span class="text-center"
+              ><i class="fa-brands fa-square-twitter"></i
+            ></span>
+            <span class="text-center text-base">Twitter</span>
+          </a>
+          <a
+            href="https://github.com/dataidea"
+            target="_blank"
+            class="flex flex-col"
+          >
+            <span><i class="fa-brands fa-github"></i></span>
+            <span class="text-base">
+              <p>Git &</p>
+              <p>GitHub</p>
+            </span>
+          </a>
+        </div>
+      </main>
+      <aside class="">
+        <ul class="flex flex-col space-y-3 px-3 w-full text-center">
+          <li>
+            <a href="#services" class="font-medium text-center">
+              <span class=""> SERVICES</span>
+            </a>
+          </li>
+          <li>
+            <a href="blog.dataidea.org" class="font-medium">
+              <span class=""> BLOG</span>
+            </a>
+          </li>
+          <li>
+            <a href="shop.dataidea.org" class="font-medium">
+              <span class=""> SHOP</span>
+            </a>
+          </li>
+          <!-- <li>
+                  <a href="#portfolio" class="font-medium">
+                      <span class=""> PORTFOLIO</span>
+                  </a>
+              </li> -->
+          <li>
+            <a href="index.html#about" class="font-medium">
+              <span class=""> ABOUT</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="font-medium">
+              <span class=""> CONTACT</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/mailer.js"></script>
+    <script src="/js/buttons.js"></script>
+
+    <!-- nav -->
+    <script>
+      // Get the dropdown buttons and menus
+      const dropdownBtns = document.querySelectorAll(".mobile-dropdown-btn");
+      const dropdownMenus = document.querySelectorAll(".mobile-dropdown-menu");
+
+      // Function to toggle the visibility of the dropdown menu
+      function toggleDropdown(index) {
+        dropdownMenus.forEach((menu, i) => {
+          if (i === index) {
+            menu.classList.toggle("hidden");
+          } else {
+            menu.classList.add("hidden");
+          }
+        });
+      }
+
+      // Add click event listeners to dropdown buttons
+      dropdownBtns.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+          toggleDropdown(index);
+        });
+      });
+
+      // Function to close dropdown menus when clicking outside
+      function closeDropdownsOutside() {
+        window.addEventListener("click", (event) => {
+          if (!event.target.matches(".mobile-dropdown-btn")) {
+            dropdownMenus.forEach((menu) => {
+              menu.classList.add("hidden");
+            });
+          }
+        });
+      }
+
+      // Call the function to close dropdowns when clicking outside
+      closeDropdownsOutside();
+
+      // Function to toggle the mobile menu
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenu.classList.toggle("hidden");
+      }
+
+      // Add click event listener to the mobile menu button
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      mobileMenuBtn.addEventListener("click", () => {
+        toggleMobileMenu();
+      });
+    </script>
+  </body>
+</html>
